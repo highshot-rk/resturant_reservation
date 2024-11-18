@@ -11,4 +11,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  root "reservations#index"
+
+  resources :reservations, only: [:index, :new, :create] do
+    member do
+      patch :cancel
+    end
+  end
 end

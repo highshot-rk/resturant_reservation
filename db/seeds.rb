@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Create sample tables with varying capacities
+10.times do
+  Table.create!(capacity: (2..8).to_a.sample)
+end

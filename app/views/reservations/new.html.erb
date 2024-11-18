@@ -1,0 +1,27 @@
+<section class='p-4 p-lg-5'>
+  <h1>New Reservation</h1>
+
+  <%= form_with model: @reservation, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :reservation_time, class: 'form-label' %>
+      <%= form.datetime_field :reservation_time, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :duration, class: 'form-label' %>
+      <%= form.number_field :duration, class: 'form-control', min: 1 %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :reservation_capacity, class: 'form-label' %>
+      <%= form.number_field :reservation_capacity, class: 'form-control' %>
+    </div>
+
+    <%= form.submit 'Create Reservation', class: 'btn btn-success' %>
+  <% end %>
+</section>

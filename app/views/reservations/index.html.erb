@@ -1,0 +1,33 @@
+<section class='p-4 p-lg-5'>
+  <h1>Reservations</h1>
+  <%= link_to 'New Reservation', new_reservation_path, class: 'btn btn-primary' %>
+
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Time</th>
+        <th>Duration (hrs)</th>
+        <th>Capacity</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <td><%= reservation.name %></td>
+          <td><%= reservation.reservation_time.strftime('%Y-%m-%d %H:%M') %></td>
+          <td><%= reservation.duration %></td>
+          <td><%= reservation.reservation_capacity %></td>
+          <td><%= reservation.status.text %></td>
+          <td>
+            <% if reservation.status.confirmed? %>
+              <%= button_to 'Cancel', cancel_reservation_path(reservation), method: :patch, class: 'btn btn-danger btn-sm', data: { turbo_confirm: 'Are you sure?' } %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Potential problems
+
+1. One table has 8 seats and Guest asked 6 capacity. If there are two tables with 3 seats, one reservation must be two tables.
