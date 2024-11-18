@@ -25,4 +25,32 @@ Things you may want to cover:
 
 # Potential problems
 
-Need to allocate_tables logic in future
+1. Need to allocate_tables logic in future
+2. Allow reservation for only 1 hour
+
+# How to init project
+
+```ruby
+rails db:create
+rails db:migrate
+rails db:seed
+```
+# How to start
+
+```
+rails s
+```
+
+# ENV
+1. ruby 3.2.2
+2. rails 8.0
+3. Postgresql
+4. bootstrap
+5. rspec
+
+# Results
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-3.png)
